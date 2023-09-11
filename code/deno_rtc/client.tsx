@@ -1,4 +1,9 @@
-import React, { useState, useEffect, useRef, FC } from "https://esm.sh/react@17";
+import React, {
+  FC,
+  useEffect,
+  useRef,
+  useState,
+} from "https://esm.sh/react@17";
 import ReactDOM from "https://esm.sh/react-dom@17";
 import { Message, WsMessage } from "./shared.ts";
 
@@ -59,25 +64,25 @@ const App: FC = () => {
   return (
     <>
       <p>Name</p>
-      <input value={ name } onChange={ (e) => setName(e.target.value) }/>
-      <hr/>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <hr />
       <input
-        value={ newMessage }
-        onChange={ (e) => setNewMessage(e.target.value) }
+        value={newMessage}
+        onChange={(e) => setNewMessage(e.target.value)}
       />
-      <button onClick={ () => sendMessage() }>Send</button>
+      <button onClick={() => sendMessage()}>Send</button>
       <div>
-        { messages.map((msg) => (
+        {messages.map((msg) => (
           <p>
             <small>
-              { msg.timestamp } / <b>{ msg.from }</b>
-            </small>: { msg.body }
+              {msg.timestamp} / <b>{msg.from}</b>
+            </small>: {msg.body}
           </p>
-        )) }
+        ))}
       </div>
     </>
   );
 };
 
 const app = document.getElementById("app");
-ReactDOM.render(<App/>, app);
+ReactDOM.render(<App />, app);
